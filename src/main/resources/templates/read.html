@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header :: headtag(title='商品一覧表')}">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="~{layout/bodyheader :: head}"></div>
+<br />
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div th:text="${btitle}" class="h2 text-center"></div><br />
+    <br />
+    <p class="text-center">Spring Boot + PostgreSQLで読み書きするサンプル。</p><br />
+    <br />
+    <form action="/mvc/read" method="post">
+      商品番号で検索。全件表示はヘッダーバーのホームボタンを押してください。<br />
+      <input type="text" name="find" class="form-control form-control-sm" th:value="${value}" />
+      <input class="btn btn-primary" type="submit" value="検索" />
+    </form>
+    <br />
+    <table class="table table-sm table-dark">
+      <tr class="table-primary">
+        <th>ユニークID</th><th>商品番号</th><th>商品名</th><th>編集日付</th>
+        <th>編集時刻</th><th>備考</th><th></th><th></th>
+      </tr>
+      <tr th:each="entity : ${data}" class="table-light">
+        <td th:text="${entity.uniqueId}"></td>
+        <td th:text="${entity.shohinCode}"></td>
+        <td th:text="${entity.shohinName}"></td>
+        <td th:with="date=${entity.editDate}"
+            th:text="${#strings.substring(date,0,4) + '/' + #strings.substring(date,4,6) + '/' + #strings.substring(date,6,8)}"></td>
+        <td th:if="${#strings.length(entity.editTime) le 5}" th:with="time='0' + ${entity.editTime}"
+            th:text="${#strings.substring(time,0,2) + ':' + #strings.substring(time,2,4) + ':' + #strings.substring(time,4,6)}"></td>
+        <td th:if="${#strings.length(entity.editTime) ge 6}" th:with="time=${entity.editTime}"
+            th:text="${#strings.substring(time,0,2) + ':' + #strings.substring(time,2,4) + ':' + #strings.substring(time,4,6)}"></td>
+        <td th:text="${entity.remarks}"></td>
+        <td><a th:href="@{/mvc/editc/{uniqueId}(uniqueId=*{entity.uniqueId})}" class="btn btn-primary">更新</a></td>
+        <td>
+          <form th:action="@{/mvc/erase/{uniqueId}(uniqueId=*{entity.uniqueId})}" method="post">
+            <input name="delid" class="btn btn-primary" type="submit" value="削除" />
+          </form>
+        </td>
+      </tr>
+    </table>
+
+    <form th:action="@{/mvc/login?logout}" method="post">
+      <input class="btn btn-primary" type="submit" value="ログアウト" />
+    </form>
+    <br />
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div th:replace="~{layout/bodyfooter :: foot}"></div>
+</body>
+</html>

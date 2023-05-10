@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/header :: headtag(title='例外が発生しました')}">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="/layout/bodyheader :: head"></div>
+<br />
+<div class="row">
+  <div class="col-xl-2"></div>
+  <div class="col-xl-8">
+    <div th:text="${btitle}" class="h2 text-center"></div><br />
+    <table class="table table-sm table-dark">
+      <tr class="table-primary">
+        <th style="width:35%">題名</th>
+        <th style="width:65%">内容</th>
+      </tr>
+      <tr class="table-light">
+        <td>例外クラス</td>
+        <td th:text="${title}"></td>
+      </tr>
+      <tr class="table-light">
+        <td>例外発生URI</td>
+        <td th:text="${place}"></td>
+      </tr>
+      <tr class="table-light">
+        <td>HTTPステータスコード</td>
+        <td th:text="${code}"></td>
+      </tr>
+      <tr class="table-light">
+        <td>例外メッセージ</td>
+        <td th:text="${msg}"></td>
+      </tr>
+      <tr class="table-light">
+        <td>スタックトレース</td>
+        <td th:text="${trace}"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-xl-2"></div>
+</div>
+<div th:replace="~{/layout/bodyfooter :: foot}"></div>
+</body>
+</html>
