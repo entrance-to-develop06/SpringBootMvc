@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header :: headtag(title='商品編集')}">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="~{layout/bodyheader :: head}"></div>
+<br />
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div th:text="${btitle}" class="h2 text-center"></div><br />
+    <form th:action="@{/mvc/change/{uniqueId}(uniqueId=*{UniqueId})}" th:object="${data}" method="post">
+      ユニークID：<label th:text="*{UniqueId}"></label>
+      <br />
+      <label>商品番号：</label>
+      <input type="number" class="form-control form-control-sm" th:field="*{ShohinCode}" />
+      <br />
+      <label>商品名：</label>
+      <input type="text" name="ShohinName" class="form-control form-control-sm" th:field="*{ShohinName}" />
+      <br />
+      <label>備考：</label>
+      <input type="text" name="Remarks" class="form-control form-control-sm" th:field="*{Remarks}" />
+      <br />
+      <input class="btn btn-primary" type="submit" value="更新" />
+    </form>
+    <br />
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<div th:replace="~{layout/bodyfooter :: foot}"></div>
+</body>
+</html>

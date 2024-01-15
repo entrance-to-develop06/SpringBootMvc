@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+    username: ORIGIN
+    password: originpassword
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #テーブル名カラム名の大文字小文字区別用
+    open-in-view: true
