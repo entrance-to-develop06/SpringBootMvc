@@ -5,9 +5,9 @@
 
 ## 1. 開発環境  
 ```
-統合開発環境：JetBrains IntelliJ IDEA Community Edition 2023.1 + Spring Initializr  
-プログラム言語：Java 17  
-開発SDK：Oracle JDK 17.0.7  
+統合開発環境：JetBrains IntelliJ IDEA Community Edition 2023.3.2 + Spring Initializr  
+プログラム言語：Java 21  
+開発SDK：Oracle JDK 21.0.1  
 フレームワーク：Spring Boot 3.0.6  
 -Spring Framework 6.0.8  
 -サーブレットエンジン：Apache Tomcat ${tomcatVersion}  
@@ -16,9 +16,9 @@
 -O/R マッピング フレームワーク：Hibernate ORM 6.1.7.Final + JPA 3.1.0  
 -ログイン認証:Spring Security 6.0.3
 ログイン認証：Form認証
-データベース：PostgreSQL 15.2またはOracle Database 21c Express
--データベース管理ツール：pgAdmin 7.1またはOracle SQL Developer 23.1
-ビルドツール： Gradle 8.1.1 Groovy
+データベース：PostgreSQL 16.1またはOracle Database 21c Express
+-データベース管理ツール：pgAdmin 8.2またはOracle SQL Developer 23.1
+ビルドツール： Gradle 8.5 Groovy
 CSSテンプレート：Bootstrap 5.2.3
 ```
 
