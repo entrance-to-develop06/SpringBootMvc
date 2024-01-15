@@ -8,13 +8,13 @@
 統合開発環境：JetBrains IntelliJ IDEA Community Edition 2023.3.2 + Spring Initializr  
 プログラム言語：Java 21  
 開発SDK：Oracle JDK 21.0.1  
-フレームワーク：Spring Boot 3.0.6  
--Spring Framework 6.0.8  
--サーブレットエンジン：Apache Tomcat ${tomcatVersion}  
--テンプレートエンジン：Thymeleaf 3.1.1.RELEASE  
--データベース接続：PostgreSQL JDBC 4.2 Driver 42.5.4またはOracle Database Driver ojdbc8  
--O/R マッピング フレームワーク：Hibernate ORM 6.1.7.Final + JPA 3.1.0  
--ログイン認証:Spring Security 6.0.3
+フレームワーク：Spring Boot 3.2.1  
+-Spring Framework 6.1.2  
+-サーブレットエンジン：Apache Tomcat 10.1.17  
+-テンプレートエンジン：Thymeleaf 3.1.2.RELEASE  
+-データベース接続：PostgreSQL JDBC 4.2 Driver 42.6.0またはOracle Database Driver ojdbc8  
+-O/R マッピング フレームワーク：Hibernate ORM 6.4.1.Final + JPA 3.1.0  
+-ログイン認証:Spring Security 6.3.0-SNAPSHOT
 ログイン認証：Form認証
 データベース：PostgreSQL 16.1またはOracle Database 21c Express
 -データベース管理ツール：pgAdmin 8.2またはOracle SQL Developer 23.1
