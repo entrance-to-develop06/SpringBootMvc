@@ -5,20 +5,20 @@
 
 ## 1. 開発環境  
 ```
-統合開発環境：JetBrains IntelliJ IDEA Community Edition 2023.3.2 + Spring Initializr  
+統合開発環境：JetBrains IntelliJ IDEA Community Edition 2024.2.0.2 + Spring Initializr  
 プログラム言語：Java 21  
-開発SDK：Oracle JDK 21.0.1  
-フレームワーク：Spring Boot 3.2.1  
--Spring Framework 6.1.2  
--サーブレットエンジン：Apache Tomcat 10.1.17  
+開発SDK：Oracle JDK 21.0.4  
+フレームワーク：Spring Boot 3.3.3  
+-Spring Framework 6.1.12  
+-サーブレットエンジン：Apache Tomcat 10.1.28  
 -テンプレートエンジン：Thymeleaf 3.1.2.RELEASE  
--データベース接続：PostgreSQL JDBC 4.2 Driver 42.6.0またはOracle Database Driver ojdbc8  
--O/R マッピング フレームワーク：Hibernate ORM 6.4.1.Final + JPA 3.1.0  
--ログイン認証:Spring Security 6.3.0-SNAPSHOT
+-データベース接続：PostgreSQL JDBC 4.2 Driver 42.7.3またはOracle Database Driver ojdbc8  
+-O/R マッピング フレームワーク：Hibernate ORM 6.5.2.Final + JPA 3.1.0  
+-ログイン認証:Spring Security 6.3.3
 ログイン認証：Form認証
-データベース：PostgreSQL 16.1またはOracle Database 21c Express
--データベース管理ツール：pgAdmin 8.2またはOracle SQL Developer 23.1
-ビルドツール： Gradle 8.5 Groovy
+データベース：PostgreSQL 16.4またはOracle Database 21c Express
+-データベース管理ツール：pgAdmin 8.11またはOracle SQL Developer 23.1
+ビルドツール： Gradle 8.10 Groovy
 CSSテンプレート：Bootstrap 5.2.3
 ```
 

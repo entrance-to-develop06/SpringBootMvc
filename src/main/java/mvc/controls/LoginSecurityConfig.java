@@ -28,12 +28,12 @@ public class LoginSecurityConfig {
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/mvc/login").permitAll() //ルートは全ユーザーがアクセス可能。
                 .anyRequest().authenticated()); //その他のURLは認証が必要
-        http.formLogin()
+        http.formLogin((formLogin) -> formLogin
                 .loginPage("/mvc/login")
                 .defaultSuccessUrl("/mvc/read") //ログイン成功時のアクセス先html。UserDetailsServiceメソッドを使う場合はいらない。
-                .permitAll();
-        http.csrf().disable(); //csrf対策無効。検索のPostで403を返すので取り合えず。
-        http.logout().permitAll();
+                .permitAll());
+        http.csrf((csrf) -> csrf.disable()); //csrf対策無効。検索のPostで403を返すので取り合えず。
+        http.logout((logout) -> logout.permitAll());
 
         return http.build();
     }
