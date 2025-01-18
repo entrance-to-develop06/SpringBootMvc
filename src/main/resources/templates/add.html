@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header :: headtag(title='商品登録')}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:replace="~{layout/bodyheader :: head}"></div>
+<br />
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="h2 text-center">商品登録</div><br />
+        <form action="/mvc/create" method="post">
+            <label>商品番号：</label>
+            <input type="number" name="ShohinCode" class="form-control form-control-sm" th:value="${value}" />
+            <br />
+            <label>商品名：</label>
+            <input type="text" name="ShohinName" class="form-control form-control-sm" th:value="${value}" />
+            <br />
+            <label>備考：</label>
+            <input type="text" name="Remarks" class="form-control form-control-sm" th:value="${value}" />
+            <br />
+            <input class="btn btn-primary" type="submit" value="追加" /><br />
+        </form>
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<div th:replace="~{layout/bodyfooter :: foot}"></div>
+</body>
